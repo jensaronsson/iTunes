@@ -19,7 +19,7 @@ class ITunesServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__.'/../../config/itunes.php' => config_path('itunes.php'),
+            __DIR__ . '/../../config/itunes.php' => config_path('itunes.php'),
         ]);
     }
 
@@ -29,7 +29,7 @@ class ITunesServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->register('Vinelab\Http\HttpServiceProvider');
-        $this->app['vinelab.itunes'] = $this->app->share(function () {
+        $this->app['vinelab.itunes'] = $this->app->singleton(function () {
             return new LaravelAgent($this->app['config'], $this->app['cache'], $this->app['vinelab.httpclient']);
         });
 
