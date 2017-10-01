@@ -29,7 +29,7 @@ class ITunesServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->register('Vinelab\Http\HttpServiceProvider');
-        $this->app['vinelab.itunes'] = $this->app->singleton(function () {
+        $this->app->singleton('vinelab.itunes', function () {
             return new LaravelAgent($this->app['config'], $this->app['cache'], $this->app['vinelab.httpclient']);
         });
 
