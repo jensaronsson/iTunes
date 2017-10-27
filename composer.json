@@ -13,7 +13,7 @@
         "illuminate/support": "5.*",
         "illuminate/config": "5.*",
         "illuminate/cache": "5.*",
-        "vinelab/http": "1.2.*"
+        "vinelab/http": "1.5.4"
     },
     "require-dev": {
         "phpunit/phpunit": "4.3.*",
